@@ -1,0 +1,13 @@
+{
+  "reset": "reset",
+  "close": "close",
+  "size": "size",
+  "download":"download",
+  "copy":"copy",
+  "copied":"copied",
+  "currentColor":"Current color",
+  "searchPlaceholder":"Search icons",
+  "iconSets":"Icon sets",
+  "layoutIconSize":"Layout icon size",
+  "loading":"Loading"
+}

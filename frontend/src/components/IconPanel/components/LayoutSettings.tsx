@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useStore } from "effector-react";
 import React from "react";
 import { ICON_SETS } from "../../../constants";
-import { $fetchCollections, $iconsStore } from "../../../store/icons";
+import { $fetchCollectionsFx, $iconsStore } from "../../../store/icons";
 import { $setIconLayoutSize, $uiStore, LayoutSize } from "../../../store/ui";
 
 type Props = {};
@@ -18,7 +18,7 @@ const LayoutSettings = (props: Props) => {
         {Object.entries(ICON_SETS).map(([key, { icon }]) => (
           <div
             key={key}
-            onClick={() => $fetchCollections(key as keyof typeof ICON_SETS)}
+            onClick={() => $fetchCollectionsFx(key as keyof typeof ICON_SETS)}
             className={clsx(
               "flex items-center cursor-pointer bg-slate-100 text-sky-500 rounded px-4 py-3",
               {
@@ -40,7 +40,7 @@ const LayoutSettings = (props: Props) => {
               {
                 "!text-slate-100 bg-sky-500 ": uiStore.iconLayoutSize === value,
               },
-              "cursor-pointer font-bold text-lg rounded-lg flex items-center justify-center aspect-square w-1/4 bg-slate-100 text-sky-500"
+              "cursor-pointer font-bold text-lg rounded flex items-center justify-center aspect-square w-1/4 bg-slate-100 text-sky-500"
             )}
             key={key}
           >
@@ -51,7 +51,7 @@ const LayoutSettings = (props: Props) => {
 
       <a
         target={"_blank"}
-        className="absolute bottom-4 right-4 left-4"
+        className="my-4"
         href="https://www.buymeacoffee.com/bikishovdY"
         rel="noreferrer"
       >

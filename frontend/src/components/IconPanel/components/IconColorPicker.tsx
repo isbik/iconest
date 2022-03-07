@@ -36,7 +36,7 @@ const IconColorPicker = (props: Props) => {
   return (
     <div className="flex items-center mb-4">
       <label className="mr-2" htmlFor="color">
-        Current Color
+        Current color
       </label>
       <input
         checked={isCurrentColor}
@@ -45,7 +45,6 @@ const IconColorPicker = (props: Props) => {
         type="checkbox"
         onChange={handleCurrentColorChecked}
       />
-
       <button
         disabled={isCurrentColor}
         className="flex items-center h-6 rounded-md disabled:opacity-50 border-slate-50 bg-slate-50 text-slate-900"

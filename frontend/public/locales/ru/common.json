@@ -1,0 +1,13 @@
+{
+  "reset": "Сбросить",
+  "close": "Закрыть",
+  "size": "Размер",
+  "download":"Скачать",
+  "copy":"Копировать",
+  "copied":"Скопировано",
+  "currentColor":"Текущий цвет",
+  "searchPlaceholder":"Поиск иконок",
+  "iconSets":"Наборы иконок",
+  "layoutIconSize":"Размер иконок",
+  "loading":"Загрузка"
+}
