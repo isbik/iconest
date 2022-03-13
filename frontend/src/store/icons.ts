@@ -9,7 +9,7 @@ export type Icon = {
 
 export const $fetchCollectionsFx = createEffect<string, any>();
 
-export const $setIconSet = createEvent<{ set: string; icons: Icon[] }>();
+const $setIconSet = createEvent<{ set: string; icons: Icon[] }>();
 
 export const $iconsCacheStore = createStore({} as Record<string, Icon[]>).on(
 	$fetchCollectionsFx.done,
