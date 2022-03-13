@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 	const iconsStore = useStore($iconsStore);
 	const loadingCollection = useStore($fetchCollectionsFx.pending);
 
-	const [search, setSearch] = useState('search');
+	const [search, setSearch] = useState('');
 
 	const filteredIcons = useMemo(() => {
 		return iconsStore.icons.filter(

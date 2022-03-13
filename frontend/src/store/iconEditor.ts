@@ -1,5 +1,6 @@
 import { combine, createDomain, createEvent, createStore } from 'effector';
 import { loadFromStorage, saveToStorage } from '../lib/effectorLS';
+import { isServer } from '../lib/isServer';
 import { Icon } from './icons';
 import { setValue } from './_helpers';
 
@@ -74,5 +75,7 @@ export const $iconView = combine(
 	}
 );
 
-loadFromStorage(iconEditorForm, localStorage);
-saveToStorage(iconEditorForm, localStorage);
+if (!isServer) {
+	loadFromStorage(iconEditorForm, window.localStorage);
+	saveToStorage(iconEditorForm, window.localStorage);
+}
