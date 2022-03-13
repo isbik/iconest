@@ -1,11 +1,10 @@
 import { useStore } from 'effector-react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Header from '../components/Header';
 import IconPanel from '../components/IconPanel/IconPanel';
 import { ICON_SETS } from '../constants';
-import { useLS } from '../hooks/useLS';
 import { $setIcon } from '../store/iconEditor';
 import { $fetchCollectionsFx, $iconsStore } from '../store/icons';
 import { $uiStore } from '../store/ui';
@@ -15,7 +14,7 @@ const Home: NextPage = () => {
 	const iconsStore = useStore($iconsStore);
 	const loadingCollection = useStore($fetchCollectionsFx.pending);
 
-	const [search, setSearch] = useLS('search', '');
+	const [search, setSearch] = useState('search');
 
 	const filteredIcons = useMemo(() => {
 		return iconsStore.icons.filter(

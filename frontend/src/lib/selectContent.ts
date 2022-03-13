@@ -1,16 +1,20 @@
+import { isServer } from './isServer';
+
 export const selectContent = (el: HTMLElement) => {
-  let doc = window.document;
-  let range;
-  let selection: Selection | null;
+	if (isServer) return;
 
-  if (window.getSelection && doc.createRange) {
-    selection = window.getSelection();
-    range = doc.createRange();
-    range.selectNodeContents(el);
+	let doc = window.document;
+	let range;
+	let selection: Selection | null;
 
-    if (!selection) return;
+	if (window.getSelection && doc.createRange) {
+		selection = window.getSelection();
+		range = doc.createRange();
+		range.selectNodeContents(el);
 
-    selection.removeAllRanges();
-    selection.addRange(range);
-  }
+		if (!selection) return;
+
+		selection.removeAllRanges();
+		selection.addRange(range);
+	}
 };
